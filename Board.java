@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -19,6 +20,7 @@ public class Board extends JPanel implements ActionListener {
     private boolean isPlaying = false;
 
     private Font font;
+    private Tabuleiro t;
        
     public Board() {
 
@@ -29,7 +31,7 @@ public class Board extends JPanel implements ActionListener {
         setBackground(Color.WHITE);
 
           
-        
+        t = new Tabuleiro();
         timer = new Timer(5, this);
         timer.start();
     }
@@ -38,7 +40,15 @@ public class Board extends JPanel implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g);
         
+        paintBoard(g);
         paintIntro(g);
+    }
+    
+    public void paintBoard(Graphics g) {
+        if(isPlaying == true) {
+            Graphics2D g2d = (Graphics2D) g;
+            t.desenhaTabuleiro(g2d);
+        }   
     }
 
 
@@ -47,7 +57,7 @@ public class Board extends JPanel implements ActionListener {
             isPlaying = false;
             Graphics2D g2d = (Graphics2D) g;
             try{
-                File file = new File("fonts/VT323-Regular.ttf");
+                File file = new File("fonts/vinet.ttf");
                 font = Font.createFont(Font.TRUETYPE_FONT, file);
                 GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
                 ge.registerFont(font);
@@ -56,8 +66,7 @@ public class Board extends JPanel implements ActionListener {
             }catch (Exception e){
                 System.out.println(e.toString());
             }   
-            g2d.drawString("D.A.M.A. " , 400, 400);
-            g2d.drawString("Jogo em desenvolvimento", 20, 680);
+            g2d.drawString("D.A.M.A. " , 180, 200);
         }
     }
     
@@ -69,12 +78,11 @@ public class Board extends JPanel implements ActionListener {
     private class TAdapter extends KeyAdapter {
 
         public void keyPressed(KeyEvent e) {
-            
-            // Obtém o código da tecla
             int key =  e.getKeyCode();
 
             switch (key){
                 case KeyEvent.VK_ENTER:
+                    isPlaying = true;
                     break;
                     
                 case KeyEvent.VK_LEFT:

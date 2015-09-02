@@ -6,8 +6,8 @@ import javax.swing.*;
 public class Game extends JFrame
 {
 
-    private static int WIDTH = 1000;
-    private static int HEIGHT = 750;
+    private static int WIDTH = 606;
+    private static int HEIGHT = 625;
     
     
     public Game(){
