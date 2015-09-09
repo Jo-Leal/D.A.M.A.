@@ -16,7 +16,7 @@ public class Game extends JFrame
         add(new Board());
 
         // Define a saida da aplicação
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         // Define o tamanho da janela
         setSize(new Dimension(WIDTH,HEIGHT));
         // A localização
