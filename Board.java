@@ -31,7 +31,6 @@ public class Board extends JPanel implements ActionListener {
 
           
         t = new Tabuleiro();
-        p = new Peca();
         timer = new Timer(5, this);
         timer.start();
     }

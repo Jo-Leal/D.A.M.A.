@@ -8,6 +8,19 @@ import javax.swing.*;
  * @version (a version number or a date)
  */
 public class Peca {
+    private boolean selecionado;
+    private Color cor;
+    private static final int WIDTH = 60;
+    private static final int HEIGHT = 60;
+    public Peca(Color cor){
+        this.selecionado = false;
+        this.cor = cor;
+    }
+    
+    //public void desenhaPeca(Graphics2D pincel, String color){
+        
+    //}
+    
     /**
     * Este método desenha o score 
     * 

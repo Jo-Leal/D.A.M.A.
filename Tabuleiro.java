@@ -8,6 +8,50 @@ import javax.swing.*;
  * @version (a version number or a date)
  */
 public class Tabuleiro {
+    private boolean tab[][] =  new boolean[8][8];
+    private int x[][] = new int[8][8];
+    private int y[][] = new int[8][8];
+    private Peca pv[][] = new Peca[8][8];
+    public Tabuleiro(){
+        Color cor1 = new Color(255);
+        for(int i = 1; i <= 7; i = 1+2){
+            pv[0][i] = new Peca(cor1.BLUE);
+        }
+        for(int i = 0; i <= 6; i = 1+2){
+            pv[1][i] = new Peca(cor1.BLUE);
+        }
+        for(int i = 1; i <= 7; i = 1+2){
+            pv[2][i] = new Peca(cor1.BLUE);
+        }
+        
+        for(int i = 0; i <= 6; i = 1+2){
+            pv[5][i] = new Peca(cor1.RED);
+        }
+        for(int i = 1; i <= 7; i = 1+2){
+            pv[6][i] = new Peca(cor1.RED);
+        }
+        for(int i = 0; i <= 6; i = 1+2){
+            pv[7][i] = new Peca(cor1.RED);
+        }
+        
+        
+        for(int i = 0; i <= 7; i++){
+            int aux = 5;
+            for(int j = 0; i <= 7; i++){
+                x[i][j] = aux;
+                aux = aux + 75;
+            }
+        }
+        
+        for(int i = 0; i <= 7; i++){
+            int aux = 5;
+            for(int j = 0; i <= 7; i++){
+                x[j][i] = aux;
+                aux = aux + 75;
+            }
+        }
+    }
+    
     /**
     * Este método desenha o score 
     * 
