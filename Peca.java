@@ -17,9 +17,10 @@ public class Peca {
         this.cor = cor;
     }
     
-    //public void desenhaPeca(Graphics2D pincel, String color){
-        
-    //}
+    public void desenhaPeca(Graphics2D pincel, int x, int y){
+        pincel.setColor(cor);
+        pincel.fillOval(x,y,WIDTH,HEIGHT);
+    }
     
     /**
     * Este método desenha o score 
@@ -27,7 +28,7 @@ public class Peca {
     * @param  Graphics g    
     * @return     void
     */
-    public void desenhaTabuleiro(Graphics2D pincel) {
+    /*public void desenhaTabuleiro(Graphics2D pincel) {
          //peça azul
         pincel.setColor(Color.BLUE);
         pincel.fillOval(455,80,60,60);
@@ -64,5 +65,5 @@ public class Peca {
         pincel.fillOval(5,530,60,60);
 
 
-    }
+    }*/
 }

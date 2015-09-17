@@ -50,8 +50,10 @@ public class Board extends JPanel implements ActionListener {
     public void paint(Graphics g) {
         super.paint(g);
         
+        Graphics2D g2d = (Graphics2D)g;
         paintBoard(g);
         paintIntro(g);
+        
     }
     
     public void paintBoard(Graphics g) {
